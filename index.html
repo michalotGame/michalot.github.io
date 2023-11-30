@@ -46,6 +46,12 @@
         <input type="number" id="num2" placeholder="Číslo 2">
         <button onclick="calculateSum()">Položit součet</button>
         <p id="result"></p>
+
+        <input type="text" id="display" placeholder="Zobrazení">
+        <button onclick="addDot()">Tečka</button>
+        <button onclick="addMinus()">Pomlčka</button>
+        <button onclick="addSpace()">Mezera</button>
+        <button onclick="deleteLastChar()">Smazat poslední znak</button>
     </div>
 
     <script>
@@ -54,6 +60,26 @@
             let num2 = document.getElementById("num2").value;
             let sum = parseInt(num1) + parseInt(num2);
             document.getElementById("result").innerHTML = "Výsledek: " + sum;
+        }
+
+        function addDot() {
+            let display = document.getElementById("display").value;
+            document.getElementById("display").value = display + ".";
+        }
+
+        function addMinus() {
+            let display = document.getElementById("display").value;
+            document.getElementById("display").value = display + "-";
+        }
+
+        function addSpace() {
+            let display = document.getElementById("display").value;
+            document.getElementById("display").value = display + " ";
+        }
+
+        function deleteLastChar() {
+            let display = document.getElementById("display").value;
+            document.getElementById("display").value = display.slice(0, -1);
         }
     </script>
 </body>
